@@ -9,12 +9,15 @@ With this app the owner should be able to add a list of their stylists, and for 
 
 It uses Composer to install <a href="https://phpunit.de/" target="_blank">PHPUnit</a>, <a href="http://silex.sensiolabs.org/" target="_blank">Silex</a>, and <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.  It also links to a <a href="http://www.bootstrapcdn.com/" target="_blank">Bootstrap</a> CDN for CSS Styling.
 
-###Use and Editing
-To use this boilerplate, simply: <br />
-1. Download and Extract the compressed file into the directory you'd like your project to live in. <br />
-2. Load the project folder into your text editor. <br />
-3. Start PHP in the web folder of the project directory. <br />
-4. CODE! *Take care to change the names of the files in src, tests, and views, as well as the root folder to match your project* <br />
+###Preparing the database
+1. Run psql in the terminal.
+2. Type in "CREATE DATABASE 'yourdbname';" in the terminal.
+3. Type in "\c 'yourdbname'" in the terminal.
+4. Type in "CREATE TABLE stylist (id serial PRIMARY KEY, name varchar);" in the terminal.
+5. Type in "CREATE TABLE client (id serial PRIMARY KEY, client_name varchar, stylist_id int);" in your terminal.
+6. Make sure you are accessing psql while in your project folder.
+7. HAVE FUN!
+
 
 ###Copyright (c) 2015 Geoff Winner
 

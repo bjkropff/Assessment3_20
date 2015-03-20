@@ -1,11 +1,13 @@
 ###Developers
-Bryan Borgeson
+Geoff Winner
 
 ###Date
-March 11, 2015
+March 20, 2015
 
 ###Description
-This is a boilerplate for writing apps in PHP. It uses Composer to install <a href="https://phpunit.de/" target="_blank">PHPUnit</a>, <a href="http://silex.sensiolabs.org/" target="_blank">Silex</a>, and <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.  It also links to a <a href="http://www.bootstrapcdn.com/" target="_blank">Bootstrap</a> CDN for CSS Styling.
+With this app the owner should be able to add a list of their stylists, and for each stylist, add clients who see that stylist. The stylists work independently, so each client only belongs to a single stylist.
+
+It uses Composer to install <a href="https://phpunit.de/" target="_blank">PHPUnit</a>, <a href="http://silex.sensiolabs.org/" target="_blank">Silex</a>, and <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.  It also links to a <a href="http://www.bootstrapcdn.com/" target="_blank">Bootstrap</a> CDN for CSS Styling.
 
 ###Use and Editing
 To use this boilerplate, simply: <br />
@@ -14,7 +16,7 @@ To use this boilerplate, simply: <br />
 3. Start PHP in the web folder of the project directory. <br />
 4. CODE! *Take care to change the names of the files in src, tests, and views, as well as the root folder to match your project* <br />
 
-###Copyright (c) 2015 Bryan Borgeson
+###Copyright (c) 2015 Geoff Winner
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

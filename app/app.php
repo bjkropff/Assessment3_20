@@ -1,15 +1,9 @@
 <?php
 
     require_once __DIR__.'/../vendor/autoload.php';
-    require_once __DIR__.'/../src/MyProjectClass.php';
+    require_once __DIR__.'/../src/Stylist.php';
+    require_once __DIR__.'/../src/Client.php';
 
-
-    // ***UNCOMMENT IF YOUR PROJECT NEEDS TO SAVE DATA INTO COOKIES***
-    // session_start();
-    //
-    // if(empty($_SESSION['my_session'])) {
-    //     $_SESSION['my_session'] = array();
-    // }
 
     $app = new Silex\Application;
     $app['debug'] = true;
@@ -19,7 +13,7 @@
     ));
 
     $app->get('/', function() use ($app) {
-        return $app['twig']->render('template.twig');
+        return $app['twig']->render('index.twig');
     });
 
     return $app;

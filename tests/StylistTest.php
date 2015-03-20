@@ -85,12 +85,12 @@
         {
           $name = 'Jenny';
           $id = null;
-          // $name2 = 'JennyDos'
-          // $id2 = null;
+          $name2 = 'JennyDos';
+          $id2 = null;
           $test_stylist = new Stylist($name, $id);
           $test_stylist->save();
-          // $test_stylist2 = new Stylist($name2, $id2);
-          // $test_stylist2->save();
+          $test_stylist2 = new Stylist($name2, $id2);
+          $test_stylist2->save();
 
           Stylist::deleteAll();
           $result = Stylist::getAll();

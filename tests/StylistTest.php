@@ -129,11 +129,11 @@
 
           $client_name2 = "Tom";
           $test_client2 = new Client($client_name2, $id, $test_stylist_id);
-          $test_client->save();
+          $test_client2->save();
 
           $result = $test_stylist->getClients();
 
-          $this->assertEquals([$test_client, $test_client2], $result);  
+          $this->assertEquals([$test_client, $test_client2], $result);
         }
     }
 

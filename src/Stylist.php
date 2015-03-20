@@ -51,6 +51,11 @@
           }
           return $stylist;
         }
+
+        static function deleteAll()
+        {
+          $GLOBALS['DB']->exec('DELETE FROM stylist *;');
+        }
     }
 
 ?>

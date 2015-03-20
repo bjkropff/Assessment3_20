@@ -11,6 +11,11 @@
 
     class StylistTest extends PHPUnit_Framework_TestCase
     {
+        protected function tearDown()
+        {
+          Stylist::deleteAll();
+        }
+
         function test_getName()
         {
             //Arrange
@@ -23,6 +28,18 @@
 
             //Assert
             $this->assertEquals($name, $result);
+        }
+
+        function test_setId()
+        {
+          $name = 'Tim';
+          $id = null;
+          $test_stylist = new Stylist($name, $id);
+
+          $test_stylist->setId(2);
+
+          $result = $test_stylist->getId();
+          $this->assertequals(2, $result);
         }
 
         function test_getId()
@@ -48,10 +65,38 @@
           $this->assertEquals($test_stylist, $result[0]);
         }
 
-        // function test_getAll()
-        // {
-        //   $name = 'Jenny';
-        // }
+        function test_getAll()
+        {
+          $name = 'Jenny';
+          $id = null;
+          $name2 = 'JennyDos';
+          $id2 = null;
+          $test_stylist = new Stylist($name, $id);
+          $test_stylist->save();
+          $test_stylist2 = new Stylist($name2, $id2);
+          $test_stylist2->save();
+
+          $result = Stylist::getAll();
+
+          $this->assertEquals([$test_stylist, $test_stylist2], $result);
+        }
+
+        function test_deleteAll()
+        {
+          $name = 'Jenny';
+          $id = null;
+          // $name2 = 'JennyDos'
+          // $id2 = null;
+          $test_stylist = new Stylist($name, $id);
+          $test_stylist->save();
+          // $test_stylist2 = new Stylist($name2, $id2);
+          // $test_stylist2->save();
+
+          Stylist::deleteAll();
+          $result = Stylist::getAll();
+
+          $this->assertEquals([], $result);
+        }
     }
 
 ?>

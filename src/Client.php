@@ -1,6 +1,6 @@
 <?php
 
-      $DB = new PDO('pgsql:host=localhost;dbname=hair_salon_test');
+      $DB = new PDO('pgsql:host=localhost;dbname=hair_salon');
 
       class Client
       {

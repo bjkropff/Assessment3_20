@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <title>Foodstuff: Types of Cuisine</title>
+    </head>
+    <body>
+        <center>
+    <h1>{{ stylist.getName }}</h1>
+
+    <form action='/stylist' method='post' class='form-inline'>
+        <input id='stylist_id' name='stylist_id' type='hidden' value='{{ stylist.getId() }}'>
+        <label for='client_name'>Name</label>
+        <input id='client_name' name='client_name' type='text' class='form-control'>
+        <br>
+        <br>
+        <button type='submit' class='btn btn-success'>Add a Client</button>
+    </form>
+
+        {% if client_name is not empty %}
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                <th></th>
+                 <th>Name</th>
+                 <th></th>
+                 </tr>
+              </thead>
+              <tbody>
+                    {% for addedclient in client_name %}
+                <tr>
+                 <td></td>
+                 <td>{{ addedclient.getClientName }}</td>
+                </tr>
+                    {% endfor %}
+              </tbody>
+            </table>
+        {% endif %}
+          <form action='/stylist/{{ stylist.getId }}/edit' method='get'>
+            <button type='submit' class='btn btn-warning'>Edit this Stylist</button>
+          </form>
+          <form action='/' method='get'>
+            <button type='submit' class='btn btn-default'>
+              Home
+            </button>
+          </form>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <title>Hair Salon Pro</title>
+    </head>
+    <body>
+      <center>
+          <h1>Hair<small>Salon</small></h1>
+          <h4>Add a Stylist</h4>
+
+          <form action='/index' method='post'>
+          <label for='name'><label>
+            <input id='name' name='name' type='text'>
+
+            <button type='submit' class='btn btn-success'>Add</button>
+          </form>
+
+        {% if stylist is not empty %}
+        <p>Stylist</p>
+
+          {% for stylists in stylist %}
+          <ul>
+            <form action='/stylist/{{ stylists.getId }}' method='get'>
+              <button type='submit' class='btn btn-primary'>{{ stylists.getName }} </button>
+          </form>
+        </ul>
+          {$ endfor %}
+
+                {$ else %}
+                <p> No Stylists Added </p>
+          {$ endif %}
+
+          <form action='/delete_stylist' method='post'>
+            <button type='submit' class='btn btn-danger'> Erase Stylists </button>
+          </form>
+      </center>
+    </body>
+</html>

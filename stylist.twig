@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <title>Add a Client</title>
+  </head>
+  <body>
+      <center>
+        <h1> {{ stylist.getName }}</h1>
+
+        <form action='/stylist' method='post'>
+          <input id='stylist_id' name='stylist_id' type='hidden' value='{{ stylist.getId() }}'>
+          <label for='client_name'>Name</label>
+          <input id='client_name' name='client_name' type='text'>
+          <br>
+          <button type='submit' class='btn btn-success'>Add a Client</button>
+        </form>
+
+        {% if client is not empty %}
+            <p>Client name</p>
+
+            {% for newclient in client %}
+
+            <p>{{ newclient.getClientName() }}</p>
+            
+            {% endfor %}
+
+        {% endif %}
+
+        <p><button type='submit' class='btn btn-warning'><a href='/stylist/{{ stylist.getId() }}/edit'>Edit this Stylist</button></p>
+
+          <p><a href='/'>Home</a></p>
+  </body>
+</html>

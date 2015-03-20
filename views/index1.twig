@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <title>Your Stylists</title>
+    </head>
+    <body>
+        <div class="container">
+        <center>
+        <h1>Your Stylists</h1>
+        <p>Add a Stylist</p>
+
+        <form action='/index' method='post' class='form-inline'>
+            <label for='name'></label>
+            <input id='name' name='name' type='text' class='form-control'>
+
+            <button type='submit' class='btn btn-success btn-xs'>Add</button>
+        </form>
+
+    {% if stylist is not empty %}
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Stylist</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for add in stylist %}
+                <tr>
+                    <td>
+                <form action='/stylist/{{ add.getId }}' method='get'>
+                    <p><button type="submit" class="btn btn-primary btn-large">{{ add.getName }}</button></p>
+                </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <div class="col-md-4"></div>
+                {% else %}
+                <p>You have add no types to your list yet.</p>
+    {% endif %}
+        
+        </center>
+    </div>
+    </body>
+</html>

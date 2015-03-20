@@ -21,7 +21,16 @@
         {
           $this->name = (string) $new_name;
         }
-        
+
+        function getId()
+        {
+          return $this->id;
+        }
+
+        function setId($new_id)
+        {
+          $this->id = (int) $new_id;
+        }
     }
 
 ?>

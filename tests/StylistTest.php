@@ -24,6 +24,17 @@
             //Assert
             $this->assertEquals($name, $result);
         }
+
+        function test_getId()
+        {
+          $name = 'Jenny';
+          $id = 1;
+          $test_stylist = new Stylist($name, $id);
+
+          $result = $test_stylist->getId();
+
+          $this->assertEquals(1, $result);
+        }
     }
 
 ?>
